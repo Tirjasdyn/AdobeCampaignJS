@@ -1,0 +1,8 @@
+//This script gets the date of the next Saturday based on Date of Send. Then it formats the day: Day, Month Date, Year. 
+
+var today = Date.now();
+var realToday = new Date(today);
+var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+var nextSaturday = new Date(realToday.getFullYear(), realToday.getMonth(), realToday.getDate() + (6 - realToday.getDay()));
+var eventDate = days[nextSaturday.getDay()] + ', ' + months[nextSaturday.getMonth()] + ' ' + nextSaturday.getDate() + ' ' + nextSaturday.getFullYear();
