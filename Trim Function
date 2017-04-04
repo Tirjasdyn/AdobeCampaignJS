@@ -1,0 +1,8 @@
+var eName = "   heya   "
+
+//Triming function. Apply to any variable that needs its spaces spanked off
+function nameTrim(n1){
+ return n1.trim();
+}
+
+var eventName = nameTrim(eName);
