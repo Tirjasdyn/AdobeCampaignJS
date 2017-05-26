@@ -1,0 +1,3 @@
+//Proper Cases the First Name Variable. 
+
+var nameProper = recipient.firstName.charAt(0).toUpperCase() + recipient.firstName.substring(1,this.length).toLowerCase();
