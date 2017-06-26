@@ -1,0 +1,9 @@
+//Will strip AM or PM added to a time. 
+
+// strips any AM or PM added to the time.
+var timeStr = xmlStartTime.toString();
+var fixMeridiem = timeStr.replace(/\s[AP][M]/g,"");
+var xmlStartTime = fixMeridiem;
+var endtimeStr = xmlEndTime.toString();
+var endfixMeridiem = endtimeStr.replace(/\s[AP][M]/g,"");
+var xmlEndTime = endfixMeridiem;
