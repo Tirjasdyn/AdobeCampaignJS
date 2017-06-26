@@ -1,0 +1,28 @@
+//This converst the date to a new format and includes the year. Fixes the year for the 100 year difference. 
+
+// Date
+// Date
+//Fix the 100 year difference
+var stringPuppy = xmlDate.toString();
+var realDate = stringPuppy.replace(/(\/\d{2}$)/,"/2017");
+// Now lets make it a real boy
+var splitDate = realDate.split('/');
+var objectDate = new Date(splitDate[2],splitDate[0]-1,splitDate[1]);
+var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+var classDate = days[objectDate.getDay()] + ', ' + months[objectDate.getMonth()] + ' ' + objectDate.getDate();
+//Create the date that google needs
+if (objectDate.getMonth() < 9) {
+var zeroS = "0";
+}else{
+var zeroS = "";
+}
+if (objectDate.getDate() < 10) {
+var zeroZ = "0";
+}else{
+var zeroZ = "";
+}
+var monthNum = zeroS + (objectDate.getMonth() + 1);
+var yearNum = objectDate.getFullYear();
+var dayNum = zeroZ + objectDate.getDate();
+var linkDate = yearNum + monthNum + dayNum;
