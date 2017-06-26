@@ -1,0 +1,28 @@
+//sets current time to correct format for google events. useful for creating event links. 
+
+//Google Time
+function timeConvertG(aTime) {
+var splitTime = aTime.split(':');
+var objectHours = Number(splitTime[0]);
+var objectMinutes = Number(splitTime[1]);
+//Converting the Hours
+if (objectHours > 12) {
+    var actHours = objectHours - 12;
+} else {
+    var actHours = objectHours;
+}
+//Fixing on the Hours
+if (objectMinutes == 0) {
+    var actMinutes = "00";
+} else {
+    var actMinutes = objectMinutes;
+}
+
+// Create the correct google time
+return actHours + actMinutes;
+}
+
+var linkStartTime = timeConvertG(xmlStartTime);
+var linkEndTime = timeConvertG(xmlEndTime);
+
+var google = "http://www.google.com/calendar/event?action=TEMPLATE&text=Samsung Skills Workshop&dates=" + linkDate + "T" + linkStartTime + "/" + linkDate + "T" + linkEndTime + "&details="+ className + "&location=" + storeName + ", " + storeAddress1 + " " + storeAddress2 + ", " +storeCity + ", " + storeState + " " + storeZipCode + "&trp=false&sprop=&sprop=name:&marsLinkCategory=general:general";
