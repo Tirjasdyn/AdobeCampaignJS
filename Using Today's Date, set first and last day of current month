@@ -1,0 +1,15 @@
+// This takes today's date and sets the first and last day of the month. Accounts for leap years and weirdly numbered months. 
+
+<%
+//Get Today's Date
+var todayDate = new Date();
+//Figure out the Month
+var month = todayDate.getMonth();
+var thisMonth = todayDate.getMonth() + 1;
+//Set up first of the month
+firstMonth = thisMonth + "/1/" + formatDate(new Date(), "%4Y");
+//Set up last day of the month - checks for current month and year, finds the last day of that month
+var lastDayFull = new Date(formatDate(new Date(), "%4Y"),month + 1, 0);
+var lastDay = lastDayFull.getDate();
+var setLastDay = thisMonth + "/" + lastDay + "/" + formatDate(new Date(), "%4Y");
+%>
