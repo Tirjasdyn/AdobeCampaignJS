@@ -1,8 +1,8 @@
 //Takes Universal Time and converts is to 12 hour clock and adds AM/PM
 
 //Time
-var xmlTime = rtEvent.ctx.registrationDetails.time;
-var splitTime = xmlTime.split(':');
+function timeConvert(aTime) {
+var splitTime = aTime.split(':');
 var objectHours = Number(splitTime[0]);
 var objectMinutes = Number(splitTime[1]);
 //Converting the Hours
@@ -24,4 +24,7 @@ if (objectHours > 11) {
     var meridiem = "AM";
 }
 // Create the correct event time
-var eventTime = actHours + ":" + actMinutes + " " + meridiem;
+return actHours + ":" + actMinutes + " " + meridiem;
+}
+var classStartTime = timeConvert(xmlStartTime);
+var classEndTime = timeConvert(xmlEndTime);
