@@ -1,0 +1,7 @@
+<%
+var d = new Date();
+var timeStamp = (d.getMonth()+1) + "-" + d.getDate() + "-" + d.getFullYear() + " " +
+d.getHours() + ":" + d.getMinutes();
+%>
+
+<%= timeStamp %>
