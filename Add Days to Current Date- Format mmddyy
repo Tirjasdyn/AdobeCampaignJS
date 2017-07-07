@@ -1,0 +1,15 @@
+//Get Today's Date and Set up to add Days
+Date.prototype.addDays = function(days) {
+  var dat = new Date(this.valueOf());
+  dat.setDate(dat.getDate() + days);
+  return dat;
+}
+var dat = new Date();
+// Add 90 days
+var expireRaw = dat.addDays(90);
+//Format Date so normal humans can read it. 
+var dd = expireRaw.getDate();
+var mm = expireRaw.getMonth() + 1;
+var y = expireRaw.getFullYear().toString().substr(-2);
+
+var expireDate = mm + '/'+ dd + '/'+ y;
